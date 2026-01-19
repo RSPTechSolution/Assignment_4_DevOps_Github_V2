@@ -11,7 +11,7 @@ def home():
     day_of_week = datetime.today().strftime('%A')
     return render_template('index.html', day_of_week = day_of_week)
 
-@app.route('/submit', methods=['POST'])
+@app.route('/submittodoitem', methods=['POST'])
 def submit():
     form_data = dict(request.form)
     requests.post(BACKEND_URL + '/submit', data=form_data)
